@@ -17,5 +17,19 @@ public class Tester {
         m1.inputValue();
         m1.printAll();
         System.out.println("Max: " + m1.getMaxValue());
+        
+        Matrix m2 = new Matrix(1, 2);
+        m2.inputValue();
+        Matrix m3 = new Matrix(2, 2);
+        m3.inputValue();
+        
+        Matrix m4 = m1.add(m2);
+        
+        Matrix m5 = m1.add(m3);
+        if(m5!=null)
+        {
+            System.out.println("m1+m3: ");
+            m5.printAll();
+        }
     }
 }

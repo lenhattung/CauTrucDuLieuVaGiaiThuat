@@ -5,7 +5,6 @@ import java.util.Scanner;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 /**
  *
  * @author tungi
@@ -28,9 +27,8 @@ public class Matrix {
         this.cols = cols;
         this.data = new double[rows][cols];
     }
-    
-    // Getter / Setter
 
+    // Getter / Setter
     public double[][] getData() {
         return data;
     }
@@ -55,7 +53,7 @@ public class Matrix {
         this.cols = cols;
     }
 
-    public void printAll(){
+    public void printAll() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 System.out.format("%-5.2f", data[i][j]);
@@ -63,8 +61,8 @@ public class Matrix {
             System.out.println("");
         }
     }
-    
-    public void inputValue(){
+
+    public void inputValue() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhap vao gia tri cua ma tran:");
         for (int i = 0; i < rows; i++) {
@@ -75,9 +73,53 @@ public class Matrix {
             System.out.println("");
         }
     }
-    
-    public double getMaxValue(){
+
+    public double getMaxValue() {
         // Lay ra duoc cai gia tri lon nhat cua matrix
-        
+        if (rows <= 0 || cols <= 0) {
+            return Double.MIN_VALUE;
+        }
+        double max = data[0][0];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (max < data[i][j]) {
+                    max = data[i][j];
+                }
+            }
+        }
+        return max;
+    }
+
+    public double getMinValue() {
+        // Lay ra duoc cai gia tri lon nhat cua matrix
+        if (rows <= 0 || cols <= 0) {
+            return Double.MAX_VALUE;
+        }
+        double min = data[0][0];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (min > data[i][j]) {
+                    min = data[i][j];
+                }
+            }
+        }
+        return min;
+    }
+    // Phương thức cộng hai ma trận
+
+    public Matrix add(Matrix other) {
+        // Kiểm tra điều kiện cộng ma trận (cùng kích thước)
+        if (this.rows != other.rows || this.cols != other.cols) {
+            System.out.println("Hai ma tran phai co cung kich thuoc de cong");
+            return null;
+        }
+
+        Matrix result = new Matrix(this.rows, this.cols);
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result.data[i][j] = this.data[i][j] + other.data[i][j];
+            }
+        }
+        return result;
     }
 }
