@@ -105,8 +105,8 @@ public class Matrix {
         }
         return min;
     }
-    // Phương thức cộng hai ma trận
 
+    // Phương thức cộng hai ma trận
     public Matrix add(Matrix other) {
         // Kiểm tra điều kiện cộng ma trận (cùng kích thước)
         if (this.rows != other.rows || this.cols != other.cols) {
@@ -122,4 +122,9 @@ public class Matrix {
         }
         return result;
     }
+
+//    // Phương thức nhân hai ma trận
+//    public Matrix multiply(Matrix other) {
+//       
+//    }
 }
