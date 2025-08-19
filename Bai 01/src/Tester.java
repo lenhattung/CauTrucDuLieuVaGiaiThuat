@@ -16,5 +16,6 @@ public class Tester {
         m1.printAll();
         m1.inputValue();
         m1.printAll();
+        System.out.println("Max: " + m1.getMaxValue());
     }
 }

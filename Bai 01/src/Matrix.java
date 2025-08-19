@@ -76,5 +76,8 @@ public class Matrix {
         }
     }
     
-
+    public double getMaxValue(){
+        // Lay ra duoc cai gia tri lon nhat cua matrix
+        
+    }
 }
