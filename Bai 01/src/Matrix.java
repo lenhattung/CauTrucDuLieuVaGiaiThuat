@@ -1,3 +1,6 @@
+
+import java.util.Scanner;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -56,6 +59,18 @@ public class Matrix {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 System.out.format("%-5.2f", data[i][j]);
+            }
+            System.out.println("");
+        }
+    }
+    
+    public void inputValue(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhap vao gia tri cua ma tran:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.format("data[%d][%d]: ", i, j);
+                data[i][j] = sc.nextDouble();
             }
             System.out.println("");
         }
