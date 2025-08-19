@@ -9,10 +9,12 @@
  */
 public class Tester {
     public static void main(String[] args) {
-        Matrix m1 = new Matrix(5, 5);
+        Matrix m1 = new Matrix(2, 2);
         System.out.println("So luong dong: " + m1.getRows());
         System.out.println("So luong cot: " + m1.getCols());
         System.out.println("Gia tri cua mang la: ");
+        m1.printAll();
+        m1.inputValue();
         m1.printAll();
     }
 }
