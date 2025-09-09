@@ -105,10 +105,46 @@ void testPermutations() {
     printPermutations(s);
 }
 
+
+// Bài 5
+void hanoiTower(int n, char nguon, char dich, char trung_gian) {
+    // Dieu kien dung
+    if (n == 1) {
+        cout << "Chuyen dia " << n << " tu " << nguon << " sang " << dich << endl;
+        return;
+    }
+
+    // Buoc 1: Chuyen n-1 dia tu nguon sang trung_gian (dung cot dich la trung gian):
+    hanoiTower(n - 1, nguon, trung_gian, dich);
+
+    // Buoc 2: Chuyen dia lon nhat tu nguon sang cot dich
+    cout << "Chuyen dia " << n << " tu " << nguon << " sang " << dich << endl;
+
+    // Buoc 3: Chuyen n-1 dang o cot trung_gian sang cot dich
+    hanoiTower(n - 1, trung_gian, dich, nguon);
+}
+
+// Test hàm Tháp Hà Nội
+void testHanoiTower() {
+    cout << "=== TEST HANOI TOWER===" << endl;
+
+    cout << "Voi 2 dia:" << endl;
+    hanoiTower(2, 'A', 'B', 'C');
+    cout << endl;
+
+    cout << "======================" << endl;
+
+    cout << "Voi 3 dia:" << endl;
+    hanoiTower(3, 'A', 'B', 'C');
+    cout << endl;
+}
+
+
 int main()
 {
     //testFactorial();
     //testFibonacci();
     // testGCD();
-    testPermutations();
+    // testPermutations();
+    testHanoiTower();
 }
