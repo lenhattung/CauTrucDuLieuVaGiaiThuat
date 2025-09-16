@@ -57,6 +57,34 @@ void bubbleSort(int arr[], int n) {
     }
 }
 
+// ========== SELECTION SORT =============
+void selectionSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int min_idx = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[min_idx]) {
+                min_idx = j;
+            }
+        }
+        swap(arr[i], arr[min_idx]);
+    }
+}
+
+// ========== INSERTION SORT =============
+void insertionSort(int arr[], int n) {
+    for (int i = 1; i < n - 1; i++) {
+        int key = arr[i];
+        int j = i - 1;
+        // Di chuyen cac phan tu lon hon key sang phai
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}
+
+
 int main() {
     cout << "=== DEMO CAC THUAT TOAN SAP XEP ===" << endl << endl;
 
@@ -69,8 +97,23 @@ int main() {
     cout << endl;
 
     // Test Bubble Sort
-    cout << "1. BUBBLE SORT:" << endl;
+    cout << "\n1. BUBBLE SORT:" << endl;
     copyArray(original, temp, n);
     bubbleSort(temp, n);
+    printArray(original, n, "Mang ban dau: ");
+    printArray(temp, n, "Mang da sap xep: ");
+
+    // Test Selection Sort
+    cout << "\n2. SELECTION SORT:" << endl;
+    copyArray(original, temp, n);
+    selectionSort(temp, n);
+    printArray(original, n, "Mang ban dau: ");
+    printArray(temp, n, "Mang da sap xep: ");
+
+    // Test Insertion Sort
+    cout << "\n3. INSERTION SORT:" << endl;
+    copyArray(original, temp, n);
+    insertionSort(temp, n);
+    printArray(original, n, "Mang ban dau: ");
     printArray(temp, n, "Mang da sap xep: ");
 }
