@@ -1,4 +1,4 @@
-// Bai 05_Chia De Tri.cpp : This file contains the 'main' function. Program execution begins and ends there.
+﻿// Bai 05_Chia De Tri.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
@@ -13,7 +13,7 @@ void swap(int& a, int& b) {
 }
 
 // Ham in mang
-void printArray(int arr[], int n, string title = "") {
+void printFullArray(int arr[], int n, string title = "") {
     if (!title.empty()) {
         cout << title << ": ";
     }
@@ -23,6 +23,18 @@ void printArray(int arr[], int n, string title = "") {
         if (i < n - 1) cout << ", ";
     }
     cout << "]" << endl;
+}
+
+void printArray(int arr[], int start, int end, string title = "") {
+    if (!title.empty()) {
+        cout << title << ": ";
+    }
+    cout << "[";
+    for (int i = start; i <= end; i++) {
+        cout << arr[i];
+        if (i < end) cout << ", ";
+    }
+    cout << "]";
 }
 
 // Ham copy mang
@@ -56,6 +68,100 @@ int findMax(int arr[], int left, int right, int n) {
 }
 
 
+// ====================  MERGE SORT VỚI CHIA ĐỂ TRỊ  ====================
+
+void merge(int arr[], int left, int mid, int right, int depth = 0) {
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+
+    int* L = new int[n1];
+    int* R = new int[n2];
+
+    // Copy dữ liệu
+    for (int i = 0; i < n1; i++) L[i] = arr[left + i];
+    for (int j = 0; j < n2; j++) R[j] = arr[mid + 1 + j];
+
+    string indent(depth * 4, ' ');
+    cout << indent << "TRON: ";
+    printArray(L, 0, n1 - 1, "");
+    cout << " + ";
+    printArray(R, 0, n2 - 1, "");
+
+    // Trộn
+    int i = 0, j = 0, k = left;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        }
+        else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < n1) {
+        arr[k] = L[i];
+        i++; k++;
+    }
+
+    while (j < n2) {
+        arr[k] = R[j];
+        j++; k++;
+    }
+
+    cout << " -> ";
+    printArray(arr, left, right, "");
+    cout << endl;
+
+    delete[] L;
+    delete[] R;
+}
+void mergeSortDetailed(int arr[], int left, int right, int depth = 0) {
+    if (left < right) {
+        string indent(depth * 4, ' ');
+        cout << indent << "CHIA: ";
+        printArray(arr, left, right, "");
+        cout << " [" << left << ".." << right << "]" << endl;
+
+        int mid = left + (right - left) / 2;
+        cout << indent << "-> Trai: [" << left << ".." << mid
+            << "], Phai: [" << (mid + 1) << ".." << right << "]" << endl;
+
+        mergeSortDetailed(arr, left, mid, depth + 1);
+        mergeSortDetailed(arr, mid + 1, right, depth + 1);
+        merge(arr, left, mid, right, depth);
+    }
+    else {
+        string indent(depth * 4, ' ');
+        cout << indent << "BASE: [" << arr[left] << "] - khong can chia" << endl;
+    }
+}
+
+void demoMergeSort() {
+    cout << "\n" << string(60, '=') << endl;
+    cout << "           DEMO: MERGE SORT - CHIA DE TRI" << endl;
+    cout << string(60, '=') << endl;
+
+    int arr[] = { 38, 27, 43, 3, 9, 82, 10 };
+    int n = 7;
+
+    printFullArray(arr, n, "Mang ban dau");
+
+    cout << "\nQUA TRINH CHIA DE TRI:" << endl;
+    cout << string(40, '-') << endl;
+
+    mergeSortDetailed(arr, 0, n - 1);
+
+    cout << "\n";
+    printFullArray(arr, n, "KET QUA CUOI CUNG");
+}
+
+
+
+
+
 int main()
 {
     cout << "\n============================================" << endl;
@@ -69,7 +175,9 @@ int main()
 
     cout << "\n================= VI DU FINDMAX ===========================" << endl;
     int result = findMax(original, 0, n - 1, n);
-    printArray(original, n, "Mang ban dau: ");
+    printFullArray(original, n, "Mang ban dau: ");
     cout << "Max = " << result << endl;
 
+    cout << "\n================= MERGE SORT ===========================" << endl;
+    demoMergeSort();
 }
