@@ -21,9 +21,13 @@
     <ClCompile Include="BaiToanDoiTien.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BaiToanBaLoPhanSo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
     <Text Include="InputDoiTien.txt" />
+    <Text Include="inputBaLoPhanSo.txt" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,4 @@
+240.00
+do vat 1: 10 kg (ty le: 100.00%)
+do vat 2: 20 kg (ty le: 100.00%)
+do vat 3: 30 kg (ty le: 66.67%)

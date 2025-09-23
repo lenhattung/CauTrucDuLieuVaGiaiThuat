@@ -123,11 +123,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BaiToanBaLoPhanSo.cpp" />
     <ClCompile Include="BaiToanDoiTien.cpp" />
     <ClCompile Include="BaiToanLapLich.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
+    <Text Include="inputBaLoPhanSo.txt" />
     <Text Include="InputDoiTien.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
