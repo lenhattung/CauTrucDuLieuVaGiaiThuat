@@ -69,7 +69,7 @@ void activitySelection() {
     cout << "So cuoc hop duoc chon: " << count << endl;
 }
 
-int main()
-{
-    activitySelection();
-}
+//int main()
+//{
+//    activitySelection();
+//}

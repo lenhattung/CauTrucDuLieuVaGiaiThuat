@@ -18,8 +18,12 @@
     <ClCompile Include="BaiToanLapLich.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BaiToanDoiTien.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
+    <Text Include="InputDoiTien.txt" />
   </ItemGroup>
 </Project>
