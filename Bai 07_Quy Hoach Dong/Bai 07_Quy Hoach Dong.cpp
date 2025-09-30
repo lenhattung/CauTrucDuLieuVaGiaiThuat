@@ -71,7 +71,6 @@ int climbStairs(int n) {
 
 
 //===================================
-// Bài Toán 1: Leo Cầu Thang
 // Bài Toán 2: Tổng Lớn Nhất của Dãy Con Liên Tiếp
 
 int maxSubarraySum(int a[], int n) {
