@@ -18,7 +18,13 @@
     <ClCompile Include="BaiTap 08_Linked List.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SinglyLinkedList-01.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="SinglyLinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
