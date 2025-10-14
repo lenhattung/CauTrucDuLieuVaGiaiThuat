@@ -1,3 +1,7 @@
-﻿  StudentLinkedList.cpp
-D:\Github\CauTrucDuLieuGiaiThuat\BaiTap 08_Linked List\StudentLinkedList.cpp(518,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
+﻿  BaiTap 08_Linked List.cpp
+  DoublyLinkedList.cpp
+  SinglyLinkedList-01.cpp
+  SinglyLinkedList.cpp
+  StudentLinkedList.cpp
+  Generating Code...
   BaiTap 08_Linked List.vcxproj -> D:\Github\CauTrucDuLieuGiaiThuat\BaiTap 08_Linked List\x64\Debug\BaiTap 08_Linked List.exe

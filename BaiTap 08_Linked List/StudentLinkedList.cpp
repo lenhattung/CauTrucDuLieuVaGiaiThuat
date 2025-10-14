@@ -515,218 +515,218 @@ void displayMenu() {
 }
 
 
-void main() {
-    StudentList list;
-    int choice;
-
-    // Thêm dữ liệu mẫu
-    list.insertTail(Student("SV001", "Nguyen Van An", 3.8f, 20));
-    list.insertTail(Student("SV002", "Tran Thi Binh", 3.5f, 21));
-    list.insertTail(Student("SV003", "Le Van Cuong", 2.8f, 19));
-    list.insertTail(Student("SV004", "Pham Thi Dung", 3.9f, 20));
-    list.insertTail(Student("SV005", "Hoang Van Em", 2.5f, 22));
-
-    do {
-        displayMenu();
-        cin >> choice;
-        cin.ignore();
-
-        switch (choice) {
-        case 1: {
-            string id, name;
-            float gpa;
-            int age;
-
-            cout << "Nhap ma sinh vien: ";
-            getline(cin, id);
-            cout << "Nhap ho ten: ";
-            getline(cin, name);
-            cout << "Nhap GPA: ";
-            cin >> gpa;
-            cout << "Nhap tuoi: ";
-            cin >> age;
-
-            list.insertHead(Student(id, name, gpa, age));
-            cout << "Them thanh cong!" << endl;
-            break;
-        }
-
-        case 2: {
-            string id, name;
-            float gpa;
-            int age;
-
-            cout << "Nhap ma sinh vien: ";
-            getline(cin, id);
-            cout << "Nhap ho ten: ";
-            getline(cin, name);
-            cout << "Nhap GPA: ";
-            cin >> gpa;
-            cout << "Nhap tuoi: ";
-            cin >> age;
-
-            list.insertTail(Student(id, name, gpa, age));
-            cout << "Them thanh cong!" << endl;
-            break;
-        }
-
-        case 3: {
-            string id, name;
-            float gpa;
-            int age, position;
-
-            cout << "Nhap vi tri: ";
-            cin >> position;
-            cin.ignore();
-            cout << "Nhap ma sinh vien: ";
-            getline(cin, id);
-            cout << "Nhap ho ten: ";
-            getline(cin, name);
-            cout << "Nhap GPA: ";
-            cin >> gpa;
-            cout << "Nhap tuoi: ";
-            cin >> age;
-
-            list.insertAt(Student(id, name, gpa, age), position);
-            break;
-        }
-
-        case 4:
-            list.deleteHead();
-            cout << "Xoa thanh cong!" << endl;
-            break;
-
-        case 5:
-            list.deleteTail();
-            cout << "Xoa thanh cong!" << endl;
-            break;
-
-        case 6: {
-            int position;
-            cout << "Nhap vi tri can xoa: ";
-            cin >> position;
-            list.deleteAt(position);
-            break;
-        }
-
-        case 7: {
-            string id;
-            cout << "Nhap ma sinh vien can tim: ";
-            getline(cin, id);
-            Student* sv = list.findById(id);
-            if (sv != NULL) {
-                cout << "\nTim thay sinh vien:" << endl;
-                cout << string(60, '-') << endl;
-                cout << left << setw(12) << "Ma SV"
-                    << setw(25) << "Ho Ten"
-                    << setw(8) << "GPA"
-                    << setw(6) << "Tuoi" << endl;
-                cout << string(60, '-') << endl;
-                sv->display();
-            }
-            else {
-                cout << "Khong tim thay sinh vien!" << endl;
-            }
-            break;
-        }
-
-        case 8: {
-            string name;
-            cout << "Nhap ten can tim: ";
-            getline(cin, name);
-            list.findByName(name);
-            break;
-        }
-
-        case 9:
-            list.sortByGPA();
-            cout << "Sap xep theo GPA thanh cong!" << endl;
-            list.print();
-            break;
-
-        case 10:
-            list.sortByName();
-            cout << "Sap xep theo ten thanh cong!" << endl;
-            list.print();
-            break;
-
-        case 11:
-            list.print();
-            break;
-
-        case 12: {
-            float minGPA;
-            cout << "Nhap GPA toi thieu: ";
-            cin >> minGPA;
-            list.filterByGPA(minGPA);
-            break;
-        }
-
-        case 13:
-            list.statisticsByGrade();
-            break;
-
-        case 14: {
-            Student maxSV = list.findMaxGPA();
-            Student minSV = list.findMinGPA();
-
-            cout << "\nSinh vien co GPA cao nhat:" << endl;
-            cout << string(60, '-') << endl;
-            cout << left << setw(12) << "Ma SV"
-                << setw(25) << "Ho Ten"
-                << setw(8) << "GPA"
-                << setw(6) << "Tuoi" << endl;
-            cout << string(60, '-') << endl;
-            maxSV.display();
-
-            cout << "\nSinh vien co GPA thap nhat:" << endl;
-            cout << string(60, '-') << endl;
-            cout << left << setw(12) << "Ma SV"
-                << setw(25) << "Ho Ten"
-                << setw(8) << "GPA"
-                << setw(6) << "Tuoi" << endl;
-            cout << string(60, '-') << endl;
-            minSV.display();
-            break;
-        }
-
-        case 15:
-            cout << "GPA trung binh cua lop: "
-                << fixed << setprecision(2)
-                << list.calculateAverageGPA() << endl;
-            break;
-
-        case 16:
-            list.removeDuplicates();
-            cout << "Xoa trung lap thanh cong!" << endl;
-            list.print();
-            break;
-
-        case 17:
-            list.reverse();
-            cout << "Dao nguoc thanh cong!" << endl;
-            list.print();
-            break;
-
-        case 18:
-            list.clear();
-            cout << "Da xoa tat ca sinh vien!" << endl;
-            break;
-
-        case 0:
-            cout << "Tam biet!" << endl;
-            break;
-
-        default:
-            cout << "Lua chon khong hop le!" << endl;
-        }
-
-        if (choice != 0) {
-            cout << "\nNhan Enter de tiep tuc...";
-            cin.ignore();
-            cin.get();
-        }
-
-    } while (choice != 0);
-
-}
+//void main() {
+//    StudentList list;
+//    int choice;
+//
+//    // Thêm dữ liệu mẫu
+//    list.insertTail(Student("SV001", "Nguyen Van An", 3.8f, 20));
+//    list.insertTail(Student("SV002", "Tran Thi Binh", 3.5f, 21));
+//    list.insertTail(Student("SV003", "Le Van Cuong", 2.8f, 19));
+//    list.insertTail(Student("SV004", "Pham Thi Dung", 3.9f, 20));
+//    list.insertTail(Student("SV005", "Hoang Van Em", 2.5f, 22));
+//
+//    do {
+//        displayMenu();
+//        cin >> choice;
+//        cin.ignore();
+//
+//        switch (choice) {
+//        case 1: {
+//            string id, name;
+//            float gpa;
+//            int age;
+//
+//            cout << "Nhap ma sinh vien: ";
+//            getline(cin, id);
+//            cout << "Nhap ho ten: ";
+//            getline(cin, name);
+//            cout << "Nhap GPA: ";
+//            cin >> gpa;
+//            cout << "Nhap tuoi: ";
+//            cin >> age;
+//
+//            list.insertHead(Student(id, name, gpa, age));
+//            cout << "Them thanh cong!" << endl;
+//            break;
+//        }
+//
+//        case 2: {
+//            string id, name;
+//            float gpa;
+//            int age;
+//
+//            cout << "Nhap ma sinh vien: ";
+//            getline(cin, id);
+//            cout << "Nhap ho ten: ";
+//            getline(cin, name);
+//            cout << "Nhap GPA: ";
+//            cin >> gpa;
+//            cout << "Nhap tuoi: ";
+//            cin >> age;
+//
+//            list.insertTail(Student(id, name, gpa, age));
+//            cout << "Them thanh cong!" << endl;
+//            break;
+//        }
+//
+//        case 3: {
+//            string id, name;
+//            float gpa;
+//            int age, position;
+//
+//            cout << "Nhap vi tri: ";
+//            cin >> position;
+//            cin.ignore();
+//            cout << "Nhap ma sinh vien: ";
+//            getline(cin, id);
+//            cout << "Nhap ho ten: ";
+//            getline(cin, name);
+//            cout << "Nhap GPA: ";
+//            cin >> gpa;
+//            cout << "Nhap tuoi: ";
+//            cin >> age;
+//
+//            list.insertAt(Student(id, name, gpa, age), position);
+//            break;
+//        }
+//
+//        case 4:
+//            list.deleteHead();
+//            cout << "Xoa thanh cong!" << endl;
+//            break;
+//
+//        case 5:
+//            list.deleteTail();
+//            cout << "Xoa thanh cong!" << endl;
+//            break;
+//
+//        case 6: {
+//            int position;
+//            cout << "Nhap vi tri can xoa: ";
+//            cin >> position;
+//            list.deleteAt(position);
+//            break;
+//        }
+//
+//        case 7: {
+//            string id;
+//            cout << "Nhap ma sinh vien can tim: ";
+//            getline(cin, id);
+//            Student* sv = list.findById(id);
+//            if (sv != NULL) {
+//                cout << "\nTim thay sinh vien:" << endl;
+//                cout << string(60, '-') << endl;
+//                cout << left << setw(12) << "Ma SV"
+//                    << setw(25) << "Ho Ten"
+//                    << setw(8) << "GPA"
+//                    << setw(6) << "Tuoi" << endl;
+//                cout << string(60, '-') << endl;
+//                sv->display();
+//            }
+//            else {
+//                cout << "Khong tim thay sinh vien!" << endl;
+//            }
+//            break;
+//        }
+//
+//        case 8: {
+//            string name;
+//            cout << "Nhap ten can tim: ";
+//            getline(cin, name);
+//            list.findByName(name);
+//            break;
+//        }
+//
+//        case 9:
+//            list.sortByGPA();
+//            cout << "Sap xep theo GPA thanh cong!" << endl;
+//            list.print();
+//            break;
+//
+//        case 10:
+//            list.sortByName();
+//            cout << "Sap xep theo ten thanh cong!" << endl;
+//            list.print();
+//            break;
+//
+//        case 11:
+//            list.print();
+//            break;
+//
+//        case 12: {
+//            float minGPA;
+//            cout << "Nhap GPA toi thieu: ";
+//            cin >> minGPA;
+//            list.filterByGPA(minGPA);
+//            break;
+//        }
+//
+//        case 13:
+//            list.statisticsByGrade();
+//            break;
+//
+//        case 14: {
+//            Student maxSV = list.findMaxGPA();
+//            Student minSV = list.findMinGPA();
+//
+//            cout << "\nSinh vien co GPA cao nhat:" << endl;
+//            cout << string(60, '-') << endl;
+//            cout << left << setw(12) << "Ma SV"
+//                << setw(25) << "Ho Ten"
+//                << setw(8) << "GPA"
+//                << setw(6) << "Tuoi" << endl;
+//            cout << string(60, '-') << endl;
+//            maxSV.display();
+//
+//            cout << "\nSinh vien co GPA thap nhat:" << endl;
+//            cout << string(60, '-') << endl;
+//            cout << left << setw(12) << "Ma SV"
+//                << setw(25) << "Ho Ten"
+//                << setw(8) << "GPA"
+//                << setw(6) << "Tuoi" << endl;
+//            cout << string(60, '-') << endl;
+//            minSV.display();
+//            break;
+//        }
+//
+//        case 15:
+//            cout << "GPA trung binh cua lop: "
+//                << fixed << setprecision(2)
+//                << list.calculateAverageGPA() << endl;
+//            break;
+//
+//        case 16:
+//            list.removeDuplicates();
+//            cout << "Xoa trung lap thanh cong!" << endl;
+//            list.print();
+//            break;
+//
+//        case 17:
+//            list.reverse();
+//            cout << "Dao nguoc thanh cong!" << endl;
+//            list.print();
+//            break;
+//
+//        case 18:
+//            list.clear();
+//            cout << "Da xoa tat ca sinh vien!" << endl;
+//            break;
+//
+//        case 0:
+//            cout << "Tam biet!" << endl;
+//            break;
+//
+//        default:
+//            cout << "Lua chon khong hop le!" << endl;
+//        }
+//
+//        if (choice != 0) {
+//            cout << "\nNhan Enter de tiep tuc...";
+//            cin.ignore();
+//            cin.get();
+//        }
+//
+//    } while (choice != 0);
+//
+//}
