@@ -364,71 +364,71 @@ public:
     }
 };
 
-
-int main() {
-    DoublyLinkedList list;
-
-    cout << "=== THEM PHAN TU ===" << endl;
-    list.insertTail(10);
-    list.insertTail(20);
-    list.insertTail(30);
-    list.insertHead(5);
-    list.print();
-
-    cout << "\n=== IN NGUOC ===" << endl;
-    list.printReverse();
-
-    cout << "\n=== THONG TIN DANH SACH ===" << endl;
-    cout << "Kich thuoc: " << list.getSize() << endl;
-    cout << "Phan tu tai vi tri 2: " << list.get(2) << endl;
-
-    cout << "\n=== CHEN PHAN TU ===" << endl;
-    list.insertAt(15, 2);
-    list.print();
-
-    cout << "\n=== XOA PHAN TU ===" << endl;
-    list.deleteHead();
-    list.print();
-
-    list.deleteTail();
-    list.print();
-
-    cout << "\n=== TIM KIEM ===" << endl;
-    cout << "Tim 20: " << (list.contains(20) ? "Co" : "Khong") << endl;
-    cout << "Tim 100: " << (list.contains(100) ? "Co" : "Khong") << endl;
-
-    cout << "\n=== THEM PHAN TU MOI ===" << endl;
-    list.insertTail(40);
-    list.insertTail(25);
-    list.insertTail(30);
-    list.print();
-
-    cout << "\n=== SAP XEP ===" << endl;
-    list.sort();
-    list.print();
-
-    cout << "\n=== THONG KE ===" << endl;
-    cout << "Max: " << list.findMax() << endl;
-    cout << "Min: " << list.findMin() << endl;
-    cout << "Tong: " << list.sum() << endl;
-
-    cout << "\n=== XOA TRUNG LAP ===" << endl;
-    list.removeDuplicates();
-    list.print();
-
-    cout << "\n=== DAO NGUOC ===" << endl;
-    list.reverse();
-    list.print();
-
-    cout << "\n=== IN NGUOC SAU KHI DAO ===" << endl;
-    list.printReverse();
-
-    cout << "\n=== XOA TOAN BO ===" << endl;
-    list.clear();
-    cout << "Danh sach sau khi xoa: ";
-    list.print();
-
-    return 0;
-}
+//
+//int main() {
+//    DoublyLinkedList list;
+//
+//    cout << "=== THEM PHAN TU ===" << endl;
+//    list.insertTail(10);
+//    list.insertTail(20);
+//    list.insertTail(30);
+//    list.insertHead(5);
+//    list.print();
+//
+//    cout << "\n=== IN NGUOC ===" << endl;
+//    list.printReverse();
+//
+//    cout << "\n=== THONG TIN DANH SACH ===" << endl;
+//    cout << "Kich thuoc: " << list.getSize() << endl;
+//    cout << "Phan tu tai vi tri 2: " << list.get(2) << endl;
+//
+//    cout << "\n=== CHEN PHAN TU ===" << endl;
+//    list.insertAt(15, 2);
+//    list.print();
+//
+//    cout << "\n=== XOA PHAN TU ===" << endl;
+//    list.deleteHead();
+//    list.print();
+//
+//    list.deleteTail();
+//    list.print();
+//
+//    cout << "\n=== TIM KIEM ===" << endl;
+//    cout << "Tim 20: " << (list.contains(20) ? "Co" : "Khong") << endl;
+//    cout << "Tim 100: " << (list.contains(100) ? "Co" : "Khong") << endl;
+//
+//    cout << "\n=== THEM PHAN TU MOI ===" << endl;
+//    list.insertTail(40);
+//    list.insertTail(25);
+//    list.insertTail(30);
+//    list.print();
+//
+//    cout << "\n=== SAP XEP ===" << endl;
+//    list.sort();
+//    list.print();
+//
+//    cout << "\n=== THONG KE ===" << endl;
+//    cout << "Max: " << list.findMax() << endl;
+//    cout << "Min: " << list.findMin() << endl;
+//    cout << "Tong: " << list.sum() << endl;
+//
+//    cout << "\n=== XOA TRUNG LAP ===" << endl;
+//    list.removeDuplicates();
+//    list.print();
+//
+//    cout << "\n=== DAO NGUOC ===" << endl;
+//    list.reverse();
+//    list.print();
+//
+//    cout << "\n=== IN NGUOC SAU KHI DAO ===" << endl;
+//    list.printReverse();
+//
+//    cout << "\n=== XOA TOAN BO ===" << endl;
+//    list.clear();
+//    cout << "Danh sach sau khi xoa: ";
+//    list.print();
+//
+//    return 0;
+//}
 
 

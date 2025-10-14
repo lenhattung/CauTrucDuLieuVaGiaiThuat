@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaiTap 08_Linked List.cpp" />
+    <ClCompile Include="CircularLinkedlist .cpp" />
     <ClCompile Include="DoublyLinkedList.cpp" />
     <ClCompile Include="SinglyLinkedList-01.cpp" />
     <ClCompile Include="SinglyLinkedList.cpp" />
