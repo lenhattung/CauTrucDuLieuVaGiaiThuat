@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ExpressionCalculator.cpp" />
     <ClCompile Include="StackArray.cpp" />
     <ClCompile Include="StackLinkedList .cpp" />
   </ItemGroup>

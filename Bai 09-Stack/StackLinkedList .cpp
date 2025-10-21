@@ -87,88 +87,88 @@ public:
 	
 };
 
-// Hàm hiển thị menu
-void displayMenu() {
-	cout << "\n========================================" << endl;
-	cout << "       MENU QUAN LY LINKED LIST STACK" << endl;
-	cout << "========================================" << endl;
-	cout << "1. Push (Them phan tu vao stack)" << endl;
-	cout << "2. Pop (Xoa phan tu o dinh)" << endl;
-	cout << "3. Top (Xem phan tu o dinh)" << endl;
-	cout << "4. Kiem tra stack rong" << endl;
-	cout << "5. In stack" << endl;
-	cout << "0. Thoat chuong trinh" << endl;
-	cout << "========================================" << endl;
-	cout << "Nhap lua chon cua ban: ";
-}
-
-int main() {
-    int capacity;
-    cout << "=== KHOI TAO STACK ===" << endl;
-
-	StackLinkedList stack = StackLinkedList();
-
-    int choice;
-    int value;
-
-    do {
-        displayMenu();
-        cin >> choice;
-
-        switch (choice) {
-        case 1: // Push
-            cout << "\nNhap gia tri can them: ";
-            cin >> value;
-            stack.push(value);
-            break;
-
-        case 2: // Pop
-            cout << "\n--- Thuc hien POP ---" << endl;
-			cout << "Phan tu da pop: " << stack.pop() << endl;
-            break;
-
-        case 3: // Top
-            cout << "\n--- Phan tu o dinh ---" << endl;
-            if (!stack.isEmpty()) {
-                cout << "Phan tu o dinh: " << stack.top() << endl;
-            }
-            else {
-                stack.top();
-            }
-            break;
-
-        case 4: // isEmpty
-            cout << "\n--- Kiem tra stack rong ---" << endl;
-            if (stack.isEmpty()) {
-                cout << "Stack dang RONG" << endl;
-            }
-            else {
-                cout << "Stack KHONG rong" << endl;
-            }
-            break;
-
-        case 5: // print
-            stack.print();
-            break;
-
-        case 0: // Exit
-            cout << "\n=== KET THUC CHUONG TRINH ===" << endl;
-            cout << "Cam on ban da su dung chuong trinh!" << endl;
-            break;
-
-        default:
-            cout << "\nLua chon khong hop le! Vui long chon lai." << endl;
-            break;
-        }
-
-        // Dừng màn hình để xem kết quả
-        if (choice != 0) {
-            cout << "\nNhan Enter de tiep tuc...";
-            cin.ignore();
-            cin.get();
-        }
-
-    } while (choice != 0);
-
-    return 0;
-}
+//// Hàm hiển thị menu
+//void displayMenu() {
+//	cout << "\n========================================" << endl;
+//	cout << "       MENU QUAN LY LINKED LIST STACK" << endl;
+//	cout << "========================================" << endl;
+//	cout << "1. Push (Them phan tu vao stack)" << endl;
+//	cout << "2. Pop (Xoa phan tu o dinh)" << endl;
+//	cout << "3. Top (Xem phan tu o dinh)" << endl;
+//	cout << "4. Kiem tra stack rong" << endl;
+//	cout << "5. In stack" << endl;
+//	cout << "0. Thoat chuong trinh" << endl;
+//	cout << "========================================" << endl;
+//	cout << "Nhap lua chon cua ban: ";
+//}
+//
+//int main() {
+//    int capacity;
+//    cout << "=== KHOI TAO STACK ===" << endl;
+//
+//	StackLinkedList stack = StackLinkedList();
+//
+//    int choice;
+//    int value;
+//
+//    do {
+//        displayMenu();
+//        cin >> choice;
+//
+//        switch (choice) {
+//        case 1: // Push
+//            cout << "\nNhap gia tri can them: ";
+//            cin >> value;
+//            stack.push(value);
+//            break;
+//
+//        case 2: // Pop
+//            cout << "\n--- Thuc hien POP ---" << endl;
+//			cout << "Phan tu da pop: " << stack.pop() << endl;
+//            break;
+//
+//        case 3: // Top
+//            cout << "\n--- Phan tu o dinh ---" << endl;
+//            if (!stack.isEmpty()) {
+//                cout << "Phan tu o dinh: " << stack.top() << endl;
+//            }
+//            else {
+//                stack.top();
+//            }
+//            break;
+//
+//        case 4: // isEmpty
+//            cout << "\n--- Kiem tra stack rong ---" << endl;
+//            if (stack.isEmpty()) {
+//                cout << "Stack dang RONG" << endl;
+//            }
+//            else {
+//                cout << "Stack KHONG rong" << endl;
+//            }
+//            break;
+//
+//        case 5: // print
+//            stack.print();
+//            break;
+//
+//        case 0: // Exit
+//            cout << "\n=== KET THUC CHUONG TRINH ===" << endl;
+//            cout << "Cam on ban da su dung chuong trinh!" << endl;
+//            break;
+//
+//        default:
+//            cout << "\nLua chon khong hop le! Vui long chon lai." << endl;
+//            break;
+//        }
+//
+//        // Dừng màn hình để xem kết quả
+//        if (choice != 0) {
+//            cout << "\nNhan Enter de tiep tuc...";
+//            cin.ignore();
+//            cin.get();
+//        }
+//
+//    } while (choice != 0);
+//
+//    return 0;
+//}
