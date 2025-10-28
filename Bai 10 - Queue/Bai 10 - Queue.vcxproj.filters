@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Bai 10 - Queue.cpp">
+    <ClCompile Include="QueueLinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QueueArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
